@@ -1,0 +1,27 @@
+-
+  name: Install and enable docker on dev environment
+  hosts: dev
+  become: yes
+
+  tasks:
+    - name: update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install docker
+      apt: 
+        name: docker.io
+        state: latest
+
+    - name: Start and enable docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: add user to docker group
+      user: 
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
+

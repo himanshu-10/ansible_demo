@@ -1,0 +1,19 @@
+-
+  name: Dates Playbook
+  hosts: all
+  tasks:
+    - name: show dates
+      command: date
+      register: date_out
+
+    - name: show filesystem
+      command: df -h
+      register: fs_out
+
+    - name: Display output
+      debug:
+        msg:
+          - "========== {{ inventory_hostname }} =========="
+          - "DATE: {{ date_out.stdout }}"
+          - "FILESYSTEM:"
+          - "{{ fs_out.stdout_lines }}"

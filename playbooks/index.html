@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Single File Static Website</title>
+
+<!-- ✅ CSS inside HTML -->
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f4f4;
+}
+
+header{
+  background:#222;
+  color:white;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+nav a{
+  color:white;
+  margin-left:15px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.section{
+  background:white;
+  margin:20px;
+  padding:60px;
+  border-radius:8px;
+}
+
+button{
+  padding:10px 15px;
+  background:black;
+  color:white;
+  border:none;
+  cursor:pointer;
+  border-radius:5px;
+}
+
+footer{
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>My Static Website</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section id="home" class="section">
+<h2>Welcome</h2>
+<p>This is a full static website where everything is inside one HTML file.</p>
+<button onclick="showMessage()">Click Me</button>
+</section>
+
+<section id="about" class="section">
+<h2>About</h2>
+<p>You can write your personal details, company info, or project description here.</p>
+</section>
+
+<section id="services" class="section">
+<h2>Services</h2>
+<ul>
+<li>Website Design</li>
+<li>Frontend Development</li>
+<li>Static Website Creation</li>
+</ul>
+</section>
+
+<section id="contact" class="section">
+<h2>Contact</h2>
+<p>Email: example@email.com</p>
+<p>Phone: +91 00000 00000</p>
+</section>
+
+<footer>
+<p>© 2026 My Static Website | All Rights Reserved</p>
+</footer>
+
+<!-- ✅ JavaScript inside HTML -->
+<script>
+function showMessage(){
+  alert("Your single-file static website is working perfectly!");
+}
+</script>
+
+</body>
+</html>
